@@ -7,8 +7,8 @@ function guess() {
     if(answer==''||attempt=='') setHiddenFields;
     if(!validateInput(attempt.innerHTML)) return false;
     else attempt.value = attempt.value +1;
-    if(getResults==true) {setMessage("You Win! :)");showAnswer(true);}
-    else if(attempt.value>=10) {setMessage("You Lose! :(");showAnswer(false);}
+    if(getResults==true) setMessage("You Win! :)");
+    else if(attempt.value>=10) setMessage("You Lose! :(");
     	else setMessage("Incorrect, try again.");
 }
 
@@ -60,6 +60,3 @@ function showAnswer(win){
 	else code.className.add(" failure");
 }
 
-function showReplay(){
-	${}
-}
