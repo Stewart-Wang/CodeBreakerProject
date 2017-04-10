@@ -4,7 +4,7 @@ let attempt = document.getElementById('attempt');
 function guess() {
     let input = document.getElementById('user-guess');
     //add functionality to guess function here
-    if(answer==''||attempt=='') setHiddenFields;
+    if(answer.value==''||attempt.value=='') setHiddenFields();
     if(!validateInput(attempt.innerHTML)) return false;
     else attempt.value = attempt.value +1;
     if(getResults==true) {setMessage("You Win! :)");showAnswer(true);}
@@ -14,16 +14,15 @@ function guess() {
 
 //implement new functions here
 function setHiddenFields(){
-	answer = Math.floor(Math.random()*10000).toString();	
-	while(answer.length < 4){
-		answer = "0"+answer;
+	answer.value = Math.floor(Math.random()*10000).toString();	
+	while(answer..value.length < 4){
+		answer.value = "0"+answer.value;
 	}
-	attempt = "0000";
+	attempt.value = "0";
 }
 
-function setMessage(txt){
-	let message = document.getElementById('message');
-	message.innerHTML = txt;
+function setMessage(message){
+	document.getElementById('message').innerHTML = message;	
 }
 
 function validateInput (input){
